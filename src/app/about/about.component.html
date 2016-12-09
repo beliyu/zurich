@@ -1,0 +1,58 @@
+
+    <h1>About </h1> 
+    <p-dialog [(visible)]="displayDia" width="250" [header]="'Flight  ' + wTab[1]">
+      <div class="flBac"> {{wTab[2]}} </div>
+      <table><tbody>
+        <tr>
+          <td class="col-md-6">
+            icao24
+          </td>
+          <td class="col-md-6">
+            {{wTab[0]}}
+          </td>
+        </tr>
+        <tr>
+          <td class="col-md-6">
+             Velocity
+          </td>
+          <td class="col-md-6">
+             {{speedKm()}} km/h
+          </td>
+        </tr>
+        <tr>
+          <td class="col-md-6">
+             Heading
+          </td>
+          <td class="col-md-6">
+             {{wTab[10]}} °
+          </td>
+        </tr>
+        <tr>
+          <td class="col-md-6">
+             Altitude
+          </td>
+          <td class="col-md-6">
+             {{wTab[7]}} m
+          </td>
+        </tr>
+        <tr>
+          <td >
+             Vertical Rate
+          </td>
+          <td >
+            {{wTab[11]}} m/s
+          </td>
+        </tr>
+      </tbody></table>
+        <footer>
+          {{tsDate()}}
+        </footer>
+    </p-dialog>
+    <div>
+      <button type="button" pButton label="New position" icon="fa-map-marker"
+           (click)="newPosition()" style="float:right; margin: 10px;"></button> 
+     </div>
+
+    <p-gmap [options]="options" [overlays]="overlays"
+        (onOverlayClick)="handleOverlayClick($event)" 
+       [style]="{'width':'100%','height':'620px'}" ></p-gmap>

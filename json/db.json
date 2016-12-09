@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "WhM": [
+    {
+      "ime": "Igor",
+      "grad": "Jarcujak",
+      "boja": "bl",
+      "id": "1"
+    },
+    {
+      "ime": "Dusko",
+      "grad": "Bec",
+      "boja": "bl",
+      "id": "2"
+    },
+    {
+      "ime": "Sredoje",
+      "grad": "Sumari",
+      "boja": "bl",
+      "id": "4"
+    },
+    {
+      "ime": "Stasa",
+      "grad": "Dubai",
+      "boja": "rd",
+      "id": "7"
+    },
+    {
+      "ime": "Pavle",
+      "grad": "Moskva",
+      "boja": "rd",
+      "id": "8"
+    },
+    {
+      "ime": "Stasa i tasa",
+      "grad": "Dubo1",
+      "boja": "rd",
+      "id": "9"
+    },
+    {
+      "ime": "Zoki",
+      "grad": "hikol",
+      "boja": "rd",
+      "id": "18"
+    },
+    {
+      "ime": "Zoki redux",
+      "grad": "Sinaj i gore",
+      "boja": "bl",
+      "id": "22"
+    },
+    {
+      "ime": "Zoki25",
+      "grad": "Sinaj2",
+      "boja": "bl",
+      "id": "B1gJVueml"
+    },
+    {
+      "ime": "Zokili",
+      "grad": "Sicilija",
+      "boja": "bl",
+      "id": "Syg8cul7l"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
