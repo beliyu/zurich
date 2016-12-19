@@ -10,13 +10,25 @@ describe('App', () => {
 
   it('should have a title', () => {
     let subject = browser.getTitle();
-    let result  = 'Angular2 Webpack Starter by @gdi2290 from @AngularClass';
+    let result  = 'Angular2 Webpack Starter from @AngularClass';
     expect(subject).toEqual(result);
   });
 
-  it('should have `your content here` x-large', () => {
-    let subject = element(by.css('[x-large]')).getText();
-    let result  = 'Your Content Here';
+  it('should have "Dobro vece" h2', () => {
+    let subject = element(by.css('h2')).getText();
+    let result  = 'Dobro vece, ...';
+    expect(subject).toEqual(result);
+  });
+
+  it('should have <home>', () => {
+    let subject = element(by.css('app home')).isPresent();
+    let result  = true;
+    expect(subject).toEqual(result);
+  });
+
+  it('should have buttons', () => {
+    let subject = element.all(by.css('button')).first().getText();
+    let result  = 'home';
     expect(subject).toEqual(result);
   });
 
