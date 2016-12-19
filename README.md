@@ -26,7 +26,7 @@ npm start
 # start json-server 
 npm run json
 
-# enable cross-origin resorce sharing with some btowser extension ...
+# enable cross-origin resorce sharing with some browser extension ...
 
 
 ##[AngularClass](https://angularclass.com)
