@@ -11,14 +11,14 @@ import { MyValidators } from './my.validators';
             <div class="form-group">
                 <label>Ime:</label>
                 <input type="text" formControlName="ime" required class="form-control">
-                <div class="alert alert-danger"
+                <div class="alert alert-danger" id="errIme"
                     [hidden]="!form1.controls['ime'].errors?.required">
                     Obavezno polje</div>
             </div>
             <div class="form-group">
                 <label>Grad:</label>
                 <input type="text" formControlName="grad" class="form-control">
-                <div class="bg-info"  [hidden]="!form1.hasError('krat', 'grad')" >
+                <div class="bg-info" id="errGrad" [hidden]="!form1.hasError('krat', 'grad')" >
                         Prekratko</div>
             </div>
             <button class="btn btn-primary"  [disabled]="!form1.valid" 
