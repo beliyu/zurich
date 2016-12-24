@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-describe('AddForm', () => {
+xdescribe('AddForm', () => {
 
   beforeEach(() => {
     // change hash depending on router LocationStrategy

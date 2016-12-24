@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-describe('App', () => {
+xdescribe('Home', () => {
 
   beforeEach(() => {
     // change hash depending on router LocationStrategy
@@ -15,7 +15,7 @@ describe('App', () => {
   });
 
   it('should have "Dobro vece" h2', () => {
-    let subject = element(by.css('h2')).getText();
+    let subject = element.all(by.css('h2')).get(0).getText();
     let result  = 'Dobro vece, ...';
     expect(subject).toEqual(result);
   });

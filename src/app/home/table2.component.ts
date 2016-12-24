@@ -24,13 +24,13 @@ import { Component, trigger, state, animate, transition } from '@angular/core';
         </template>
         <template let-col let-rDat="rowData" pTemplate type="body">
             <button type="text" pButton (click)="buttBoja.emit(rDat)" 
-                [label]="rDat[col.field]">               
+                [label]="rDat[col.field]" class="colButt">               
             </button> 
         </template>
       </p-column>  
       <p-column header="Del" [style]="{'width':'50px'}">
         <template let-rDat="rowData" pTemplate type="body">
-            <button type="button" pButton
+            <button type="button" pButton class="delButt"
                  (click)="buttDel.emit(rDat)" icon="fa-remove">
             </button>
         </template>
