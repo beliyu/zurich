@@ -5,14 +5,8 @@ import { OskyService } from '../osky.service';
 @Component({
   selector: 'about',
   encapsulation: ViewEncapsulation.None,
-  styles: [`
-  .flBac{background-color:#000; color:pink; font-size: 1.7em; text-align: center;}
-  .ui-dialog .ui-dialog-titlebar {margin: 0;}
-  .ui-dialog {background-color: #999;}
-  p-dialog table { border: 1px solid; width: 100%;}
-  p-dialog table td { padding-right: 15px; padding-left: 15px;}
-  `],
-  templateUrl: './about.component.html' 
+  styleUrls: ['./About.Component.css'],
+  templateUrl: './about.component.html'
 })
 export class AboutComponent {
   localState: any;

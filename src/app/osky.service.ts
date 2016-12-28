@@ -12,7 +12,7 @@ export class OskyService {
     };
     getAll() {
         return this._http.get(this._url)
-        .map((res: Response) => res.json())
+        .map((res: Response) =>  res.json())
         .map(data => data.states)
         .map((n) => {return n.filter((m) => {
              return m[5] > 8 && m[5] < 9 && m[6] > 47 && m[6] < 48; });

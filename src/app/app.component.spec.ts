@@ -15,8 +15,8 @@ describe('App', () => {
       AppComponent
     ]}));
 
-  it('should have a url', inject([ AppComponent ], (app: AppComponent) => {
-    expect(app.url).toEqual('https://twitter.com/AngularClass');
+  it('should have a name', inject([ AppComponent ], (app: AppComponent) => {
+    expect(app.name).toEqual('Angular 2 Webpack Starter');
   }));
 
 });

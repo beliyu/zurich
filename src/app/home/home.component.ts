@@ -7,7 +7,7 @@ import '../../assets/css/styles.css';
 import { AppState } from '../app.service';
 
 @Component({
-  selector: 'home',  
+  selector: 'home',
   providers: [ ],
   styleUrls: [ './home.component.css' ],
   templateUrl: './home.component.html'
@@ -15,7 +15,7 @@ import { AppState } from '../app.service';
 export class HomeComponent implements OnInit {
     WM= [] ;
     @select('iime') iime$: Observable<number>;
-  
+
   constructor(private _whm: WhmService, private _ngRedux: NgRedux<any>) {  }
 
   ngOnInit() {

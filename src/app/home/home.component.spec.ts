@@ -1,3 +1,5 @@
+import { NgRedux } from 'ng2-redux';
+import { WhmService, WhModel } from './../wh.service';
 import {
   inject,
   TestBed
@@ -13,9 +15,8 @@ import { MockBackend } from '@angular/http/testing';
 // Load the implementations that should be tested
 import { AppState } from '../app.service';
 import { HomeComponent } from './home.component';
-import { Title } from './title';
 
-describe('Home', () => {
+xdescribe('Home', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
@@ -28,21 +29,14 @@ describe('Home', () => {
         },
         deps: [MockBackend, BaseRequestOptions]
       },
-      AppState,
-      Title,
+      WhmService, WhModel,
+      NgRedux,
       HomeComponent
     ]
   }));
 
-  it('should have default data', inject([ HomeComponent ], (home: HomeComponent) => {
-    expect(home.localState).toEqual({ value: '' });
-  }));
-
-  it('should have a title', inject([ HomeComponent ], (home: HomeComponent) => {
-    expect(!!home.title).toEqual(true);
-  }));
-
-  it('should log ngOnInit', inject([ HomeComponent ], (home: HomeComponent) => {
+  it('should log ngOnInit', inject([ HomeComponent, WhModel, NgRedux ],
+      (home: HomeComponent, _whm: WhmService, _ngRedux: NgRedux<any>) => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 
