@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { NgReduxModule, NgRedux,  DevToolsExtension } from 'ng2-redux';
-import rootReducer from './store/app.reducers';
+import { rootReducer } from './store/app.reducers';
 const createLogger = require('redux-logger');
 import { ToolbarModule, ButtonModule, DataTableModule,
          SharedModule, GMapModule, DialogModule } from 'primeng/primeng';

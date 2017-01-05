@@ -1,4 +1,13 @@
-export default function iime(state = [], action) {
+export interface IIme {
+        ime: string;
+        grad: string;
+        boja: string;
+       id?: string;
+};
+
+export function imeReducer(
+  state: IIme[] = [] ,
+  action ): IIme[] {
 
   switch (action.type) {
     case 'IIME_ALL':

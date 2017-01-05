@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WhmService, WhModel } from '../wh.service';
-import { NgRedux, select } from 'ng2-redux';
+import { ImeActions } from '../store/ime.action';
+
+import { select } from 'ng2-redux';
 import { Observable } from 'rxjs/Observable';
 import '../../assets/css/styles.css';
 
@@ -8,15 +10,16 @@ import { AppState } from '../app.service';
 
 @Component({
   selector: 'home',
-  providers: [ ],
+  providers: [ ImeActions ],
   styleUrls: [ './home.component.css' ],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
     WM= [] ;
-    @select('iime') iime$: Observable<number>;
+    @select('ime') ime$: Observable<number>;
 
-  constructor(private _whm: WhmService, private _ngRedux: NgRedux<any>) {  }
+  constructor(private _whm: WhmService,
+      private _imeAct: ImeActions) {  }
 
   ngOnInit() {
   this.whmGetAll();
@@ -25,7 +28,7 @@ export class HomeComponent implements OnInit {
 whmGetAll() {
     this._whm.getAll().subscribe(data => {
 //      this.WM =[ ...data];
-      this._ngRedux.dispatch({ type: 'IIME_ALL', payload : data });
+      this._imeAct.aAll(data);
     }, err => console.log(err));
   }
 whmTogg(w) {
@@ -35,14 +38,14 @@ whmTogg(w) {
 //            wmx = (n.id!=w.id) ?  [...wmx, n] : [...wmx, data]
 //        })
 //        this.WM = wmx
-      this._ngRedux.dispatch({ type: 'IIME_TOGG', payload : data });
+      this._imeAct.aTogg(data);
     }, err => console.log(err));
   }
 whmAdd(a) {
     let w = new WhModel(a.ime, a.grad);
     this._whm.add(w).subscribe(data => {
 //      this.WM=[...this.WM, data] ;
-      this._ngRedux.dispatch({ type: 'IIME_ADD', payload : data });
+      this._imeAct.aAdd(data);
     }, err => console.log(err));
   }
 whmDel(w) {
@@ -50,9 +53,9 @@ whmDel(w) {
 //        let wmx = [];
 //        this.WM.forEach(n => {if(n.id!=w.id) wmx = [...wmx, n]})
 //        this.WM = wmx
-      this._ngRedux.dispatch({ type: 'IIME_DEL', payload : w });
+      this._imeAct.aDel(w);
     }, err => console.log(err));
   }
 }
 
-// in comment line is version without redux .....
+// in comment line is version without redux ..... 

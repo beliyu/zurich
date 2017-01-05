@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
-import iime from './ime.reducer';
-export default  combineReducers({
-  iime
+import { imeReducer, IIme } from './ime.reducer';
+
+export interface IRootState {
+  ime?: IIme[];
+};
+
+export const rootReducer = combineReducers<IRootState>({
+  ime : imeReducer
 });
