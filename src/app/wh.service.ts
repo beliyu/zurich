@@ -45,6 +45,7 @@ export class WhmService {
           {headers: this.headers}).map(res => res.json())
         .catch(this.handleError);
     };
+
     private handleError (error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
