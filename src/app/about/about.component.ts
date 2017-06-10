@@ -5,7 +5,7 @@ import { OskyService } from '../osky.service';
 @Component({
   selector: 'about',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./About.Component.css'],
+  styleUrls: ['./about.component.css'],
   templateUrl: './about.component.html'
 })
 export class AboutComponent {
@@ -63,7 +63,7 @@ export class AboutComponent {
      this.displayDia = true;
   }
 
-//      m/s >> km/h 
+//      m/s >> km/h
   speedKm(){
     return Math.floor(this.wTab[9] * 3.6 );
   }
